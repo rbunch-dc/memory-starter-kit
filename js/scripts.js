@@ -19,3 +19,19 @@ function toggle(theElement){
 
 
 }
+
+$(document).ready(function(){
+    $('.mg_tile').click(function(){
+        if($('.mg_tile-inside:visible').length == 2){
+            $('.mg_tile-inside').hide();
+        }
+        $(this).find('.mg_tile-inside').show();
+
+        //Check again
+        if($('.mg_tile-inside:visible').length == 2){
+            $('.mg_tile-inside:visible').each(function(){
+                card = $(this).attr('card');
+            });
+        }
+    });
+});
