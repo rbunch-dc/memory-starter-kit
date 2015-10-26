@@ -1,7 +1,10 @@
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  margin: auto;  
 }
 
 .mg_wrapper {
@@ -21,12 +24,6 @@ img {
   padding-bottom: 50%;  
 }
 
-.mg_tile {
-  /*Each tile needs a set position*/
-  position: absolute;
-  padding: 5px;  
-  box-sizing: border-box;  
-}
 
 /* game_level-1 styles */
 .mg_tile {
@@ -34,40 +31,13 @@ img {
   /*Set the height of each element*/
   height: 50%;
   width: 25%;
+  padding: 5px;  
+  box-sizing: border-box;    
 }
 
 /*Each element needs top % and left % so it appears in the right slot. The second one is done for you.*/
-.mg_tile-1 {
-  top: 0%;
-  left: 0%;  
-}
-.mg_tile-2 {
-  top: 0%;
-  left: 25%;
-}
-.mg_tile-3 {
-  top: 0%;
-  left: 50%;  
-}
-.mg_tile-4 {
-  top: 0%;
-  left: 75%;
-}
-.mg_tile-5 {
-  top: 50%;
-  left: 0%;
-}
-.mg_tile-6 {
-  top: 50%;
-  left: 25%;
-}
-.mg_tile-7 {
-  top: 50%;
-  left: 50%;
-}
-.mg_tile-8 {
-  top: 50%;
-  left: 75%;
+.mg_tile {
+  float: left;  
 }
 
 .mg_tile-inner {
@@ -81,7 +51,7 @@ img {
 }
 
 .mg_tile-outside,
-.mg_tile-inside {
+.mg_tile-inside, .mg_tile-inside-matched {
   /*position must be set*/
   /*top and left must be set*/
   /*height and width must be set*/
@@ -105,7 +75,7 @@ img {
   display: block;
 }
 
-.mg_tile-inside {
+.mg_tile-inside, .mg_tile-inside-matched {
   /*set a bg-color*/
   /*set a default display ... this must be different than .mg_tile-outside*/
   background-color: #f8fafc;
