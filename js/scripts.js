@@ -22,11 +22,34 @@ var moves=0;
 
 $(document).ready(function(){
 
+    var gridSize = 16;
+    var gridArray = [];
+    for(i=1; i<=gridSize; i++){
+        gridArray.push(i);
+    }
+
     //shuffle the element to the back of the div 25 times
     for(i=1;i<25;i++){
-        var rand = Math.floor(Math.random() * 8 + 1);
-        $('.mg_tile-'+rand).appendTo($('.mg_contents'))
+        var rand = Math.floor(Math.random() * 8);
+        var rand2 = Math.floor(Math.random() * 8);
+        console.log(rand + ' - ' + rand2);
+        var temp = gridArray[rand];
+        gridArray[rand] = gridArray[rand2];
+        gridArray[rand2] = temp;
     }
+
+    console.log(gridArray);
+
+    for(i=1; i<=gridSize; i++){
+        var html = '<div class="mg_tile mg_tile-'+i+'"><div class="mg_tile-inner"><div class="mg_tile-outside"></div><div class="mg_tile-inside" id="mg-tile-'+i+'"><img src="img/default/monsters-04.png"></div></div></div>';
+        $(html).appendTo($('.mg_contents'));
+    }
+
+    // //shuffle the element to the back of the div 25 times
+    // for(i=1;i<25;i++){
+    //     var rand = Math.floor(Math.random() * 8 + 1);
+    //     $('.mg_tile-'+rand).appendTo($('.mg_contents'))
+    // }
 
     //Add click listener to each tile
     $('.mg_tile').click(function(){
